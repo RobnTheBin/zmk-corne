@@ -114,7 +114,7 @@
         };
 
         combo_m {
-            timeout-ms = <25>;
+            timeout-ms = <10>;
             key-positions = <3 4>;
             bindings = <&kp M>;
             layers = <0 1>;  
