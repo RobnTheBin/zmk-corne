@@ -248,9 +248,9 @@ layers:
   SpaceM:
   - Ctl+F12
   - Gui+$$mdi:keyboard-tab$$
-  - HOME
+  - Gui+$$mdi:arrow-left-bold$$
   - $$mdi:arrow-up-bold$$
-  - END
+  - Gui+$$mdi:arrow-right-bold$$
   - $$mdi:printer-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
