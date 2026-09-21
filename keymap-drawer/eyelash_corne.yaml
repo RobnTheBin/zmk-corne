@@ -352,9 +352,9 @@ layers:
   - {t: Alt+4, s: Alt+$}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: /, s: '?'}
-  - {t: HOME, s: HOME}
+  - {t: 'Gui+$$mdi:arrow-left-bold$$', s: 'Gui+$$mdi:arrow-left-bold$$'}
   - $$mdi:arrow-up-bold$$
-  - {t: END, s: END}
+  - {t: 'Gui+$$mdi:arrow-right-bold$$', s: 'Gui+$$mdi:arrow-right-bold$$'}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: Alt+3, h: '$$mdi:apple-keyboard-shift$$', s: Alt+#}
