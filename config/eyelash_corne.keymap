@@ -574,15 +574,6 @@
     };
 
     behaviors {
-        mac_bspc: mac_bspc {
-            compatible = "zmk,behavior-mod-morph"; 
-            #binding-cells = <0>;
-            bindings = <&kp BSPC >, <&kp LA(BSPC)>;
-            mods = <(MOD_LGUI|MOD_RGUI)>;
-        };
-    };
-
-    behaviors {
         bspc_hacek: backspace_hacek {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -835,7 +826,7 @@
 &trans              &trans              &lt WLAYERMAC W     &lt ELAYERMAC E     &trans              &trans                                            &trans                       &trans              &trans              &lt FUNCTION I      &trans              &trans                  &quotation      
 &trans              &trans              &trans              &trans              &mod_f_mac          &trans                            &trans          &trans     &trans            &trans              &mod_j_mac          &trans              &trans              &exclam_mac             &kp ENTER
 &trans              &trans              &trans              &trans              &trans              &trans              &trans                        &trans                       &trans              &trans              &trans              &trans              &trans                  &trans    
-                                                            &ctrl_x_mac         &ctrl_c_mac         &ctrl_v_mac                                                                    &mac_bspc           &sl SYMBOLMAC       &kp LS(LA(LG(LCTRL)))
+                                                            &ctrl_x_mac         &ctrl_c_mac         &ctrl_v_mac                                                                    &kp BSPC            &sl SYMBOLMAC       &kp LS(LA(LG(LCTRL)))
             >;
 
             sensor-bindings = <&scroll_encoder>;

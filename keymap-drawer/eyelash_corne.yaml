@@ -95,7 +95,7 @@ layers:
   - {t: Numbers, h: '$$mdi:gesture-tap-hold$$', s: X}
   - {t: '$$mdi:keyboard-space$$', h: SpaceM, s: C}
   - {t: '$$mdi:keyboard-esc$$', h: '$$mdi:apple-keyboard-option$$', s: V}
-  - {t: '$$mdi:backspace$$', s: 'Alt+$$mdi:backspace$$'}
+  - {t: '$$mdi:backspace$$', type: backspace}
   - {t: SymbolM, h: '$$mdi:gesture-tap-hold$$'}
   - Sft+Alt+Gui+$$mdi:apple-keyboard-control$$
   Gaming:
