@@ -358,27 +358,36 @@
                  ;
         };
 
-            winswitch: winswitch {
+            bl1: bluetooth_layer_1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <1>;
-            tap-ms = <1>;
+            wait-ms = <20>;
+            tap-ms = <20>;
             bindings
-                = 
-                <&macro_tap &tog MAC>
-                ,<&macro_tap &bt BT_SEL 0>
+                = <&macro_tap &bt BT_SEL 0>
+                , <&macro_tap &to BASE>
                  ;
         };
 
-            macswitch: macswitch {
+            bl2: bluetooth_layer_2 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <1>;
-            tap-ms = <1>;
+            wait-ms = <20>;
+            tap-ms = <20>;
             bindings
-                = 
-                <&macro_tap &tog MAC>
-                ,<&macro_tap &bt BT_SEL 1>
+                = <&macro_tap &bt BT_SEL 1>
+                , <&macro_tap &to MAC>
+                 ;
+        };
+
+            bl3: bluetooth_layer_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <20>;
+            tap-ms = <20>;
+            bindings
+                = <&macro_tap &bt BT_SEL 2>
+                , <&macro_tap &to MAC>
                  ;
         };
     };
@@ -603,15 +612,15 @@
         };
     }; 
 
-    behavior {
-        hyper_exclam_mac: hyper_exclam_mac {
+    behaviors {
+        exclam_mac: exclam_mac {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&thm LS(LA(LG(LCTRL))) RA(SQT)>, <&kp SQT>;
+            bindings = <&kp RA(SQT)>, <&kp SQT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LSFT)>;
         };
-    }; 
+    };
 
     behaviors {
         ctrl_z: ctrl_z {
@@ -824,9 +833,9 @@
             display-name = "Mac";
             bindings = <
 &trans              &trans              &lt WLAYERMAC W     &lt ELAYERMAC E     &trans              &trans                                            &trans                       &trans              &trans              &lt FUNCTION I      &trans              &trans                  &quotation      
-&trans              &trans              &trans              &trans              &mod_f_mac          &trans                            &trans          &trans     &trans            &trans              &mod_j_mac          &trans              &trans              &hyper_exclam_mac       &kp ENTER
+&trans              &trans              &trans              &trans              &mod_f_mac          &trans                            &trans          &trans     &trans            &trans              &mod_j_mac          &trans              &trans              &exclam_mac             &kp ENTER
 &trans              &trans              &trans              &trans              &trans              &trans              &trans                        &trans                       &trans              &trans              &trans              &trans              &trans                  &trans    
-                                                            &ctrl_x_mac         &ctrl_c_mac         &ctrl_v_mac                                                                    &mac_bspc           &sl SYMBOLMAC       &trans    
+                                                            &ctrl_x_mac         &ctrl_c_mac         &ctrl_v_mac                                                                    &mac_bspc           &sl SYMBOLMAC       &kp LS(LA(LG(LCTRL)))
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -958,7 +967,7 @@
 &tog GAMING         &none               &kp LC(LG(LEFT))    &none               &kp LC(LG(RIGHT))   &kp LC(Z)                                            &trans                       &rgb_ug RGB_EFF       &rgb_ug RGB_SPI     &rgb_ug RGB_BRI     &rgb_ug RGB_SAI     &rgb_ug RGB_HUI     &rgb_ug RGB_TOG      
 &kp LG(TAB)         &kp LC(F)           &kp LG(LS(LEFT))    &none               &kp LG(LS(RIGHT))   &kp LC(Y)                            &trans          &trans     &trans            &rgb_ug RGB_EFR       &rgb_ug RGB_SPD     &rgb_ug RGB_BRD     &rgb_ug RGB_SAD     &rgb_ug RGB_HUD     &trans    
 &none               &none               &none               &none               &none               &kp LG(UP)           &none                           &trans                       &trans                &trans              &trans              &trans              &trans              &bt BT_CLR       
-                                                            &kp C_NEXT          &kp LS(LC(LA(DOT))) &kp ENTER                                                                         &macswitch            &bt BT_SEL 2        &bt BT_SEL 3
+                                                            &kp C_NEXT          &kp LS(LC(LA(DOT))) &kp ENTER                                                                         &bl1                  &bl2                &bl3
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -970,7 +979,7 @@
 &tog GAMING         &none               &kp LC(LEFT)        &none               &kp LC(RIGHT)       &kp LG(LS(Y))                                        &trans                       &rgb_ug RGB_EFF       &rgb_ug RGB_SPI     &rgb_ug RGB_BRI     &rgb_ug RGB_SAI     &rgb_ug RGB_HUI     &rgb_ug RGB_TOG      
 &kp LC(UP)          &kp LG(F)           &kp LG(LS(LEFT))    &none               &kp LG(LS(RIGHT))   &kp LG(Y)                            &trans          &trans     &trans            &rgb_ug RGB_EFR       &rgb_ug RGB_SPD     &rgb_ug RGB_BRD     &rgb_ug RGB_SAD     &rgb_ug RGB_HUD     &trans    
 &none               &none               &none               &none               &none               &kp LG(UP)           &none                           &trans                       &trans                &trans              &trans              &trans              &trans              &bt BT_CLR   
-                                                            &kp C_NEXT          &kp LG(SPACE)       &kp ENTER                                                                         &winswitch            &bt BT_SEL 2        &bt BT_SEL 3
+                                                            &kp C_NEXT          &kp LG(SPACE)       &kp ENTER                                                                         &bl1                  &bl2                &bl3
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -1027,4 +1036,3 @@
 //             >
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
